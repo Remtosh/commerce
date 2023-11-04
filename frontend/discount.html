@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="all in one.css">
+    <title>Discount</title>
+</head>
+<body>
+    <div id="columns" class="columns_5">
+<div><figure class="furn">
+    <img src="Beds/B6.jpg">
+   <figcaption>Put a Bird On It</figcaption>
+   <p>Was Ksh 90000</p>
+    <p class="currency">Now Ksh <span class="price">63000</span></p>
+     <button type="button" class="add-to-cart-button" data-product-id="B006" >Add to Cart</button>
+   </figure>
+
+   <figure class="furn">
+    <img src="sofa/S2.jpg">
+    <figcaption>Comfy starts in your living room</figcaption>
+   <p>Was Ksh 84000</p>
+    <p class="currency">Now Ksh <span class="price">58800</span></p>
+    <button type="button" class="add-to-cart-button" data-product-id="S002">Add to Cart</button>
+</figure>
+
+   <figure class="furn">
+    <img src="Coat Hanger/C3.jpg">
+    <figcaption>Stand Coat Hanger</figcaption>
+   <p>Was Ksh 4500</p>
+    <p class="currency">Now Ksh <span class="price">31500</span></p>
+      <button type="button" class="add-to-cart-button" data-product-id="C003" >Add to Cart</button>
+    </figure>
+
+    <figure class="furn">
+        <img src="Dinnig Table/D2.jpg">
+        <figcaption>Feast like a king</figcaption>
+        <p>Was Ksh 38000</p>
+        <p class="currency">Now Ksh  <span class="price">26600</span></p>
+        <button type="button" class="add-to-cart-button" data-product-id="D002" >Add to Cart</button>
+        </figure>
+        
+     <figure class="furn">
+            <img src="Dressing Table/D4.jpg">
+            <figcaption>Be outstanding</figcaption>
+            <p>Was Ksh 12000</p>
+            <p class="currency">Now Ksh <span class="price">8400</span></p>
+              <button type="button" class="add-to-cart-button" data-product-id="DT004" >Add to Cart</button>
+            </figure>
+
+     <figure class="furn">
+                <img src="Kitchen/K3.jpg">
+                <figcaption>Enjoy your cooking time</figcaption>
+                <p>Was Ksh 5500</p>
+                <p class="currency">Now Ksh <span class="price">3850</span></p>
+                  <button type="button" class="add-to-cart-button" data-product-id="K003" >Add to Cart</button>
+                </figure>
+
+     <figure class="furn">
+                    <img src="Outdoor/O3.jpg">
+                    <figcaption>Enjoy the outdoor breeze</figcaption>
+                    <p>Was Ksh 45000</p>
+                    <p class="currency">Now Ksh <span class="price">31500</span></p>
+                      
+                      <button type="button" class="add-to-cart-button" data-product-id="O003" >Add to Cart</button>
+                  </figure>
+
+                  <figure class="furn">
+                    <img src="school work/S6.jpg">
+                    <figcaption>Improve your knowledge</figcaption>
+                    <p>Was Ksh 8000</p>
+                    <p class="currency">Now Ksh <span class="price">5600</span></p>
+                      <button type="button" class="add-to-cart-button" data-product-id="SC006" >Add to Cart</button>
+                  </figure>
+                      
+                  <figure class="furn">
+                    <img src="school work/S7.jpg">
+                    <figcaption>Improve your knowledge</figcaption>
+                    <p>Was Ksh 4600</p>
+                      <p class="currency">Now Ksh <span class="price">3220</span></p>
+                      <button type="button" class="add-to-cart-button" data-product-id="SC007" >Add to Cart</button>
+                      
+                  </figure>
+</div>
+    </div>
+    <div class="cart-list">
+        <div class="cart-listing">
+            <h1 class="name-cart">Cart</h1>
+            <table class="cart-table">
+              <thead>
+                <tr>
+                  <th>Product Id</th>
+                  <th>Image</th>
+                  <th>Description</th>
+                  <th>Price (Ksh)</th>
+                </tr>
+              </thead>
+              <tbody id="cart-table-body">
+                </tbody>
+            </table>
+            <div class="cart-total">
+              <h3><u>Total: <span id="total-price">Ksh 0</span></u></h3>
+            </div>
+            <button type="button" class="checkout">Checkout</button>
+        </div> 
+        <!--footer-->
+        <footer>
+          <div class="footer-content">
+              <p>&copy; 2023 Furniture palace.Ke</p>
+              <ul>
+                  <li><a href="privacy.html">Privacy Policy</a></li>
+                  <li><a href="terms.html">Terms of Service</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+          </div>
+      </footer>
+      <!---script-->
+        <script>
+          const cartTable = document.querySelector('#cart-table-body');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+    const checkoutButton = document.querySelector('.checkout');
+    
+    let totalPrice = 0;
+    
+    addToCartButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Get the product information
+      const productId = this.getAttribute('data-product-id');
+      const productName = this.closest('figure').querySelector('figcaption').textContent;
+      const productPrice = parseFloat(this.closest('figure').querySelector('.price').textContent);
+      
+    
+      // Add the product to the cart
+      const newCartRow = document.createElement('tr');
+      newCartRow.setAttribute('id', `row-${Math.random()}`);
+      newCartRow.innerHTML = `
+        <td>${productId}</td>
+        <td><img src="img/${productName}.jpg" alt="${productName}"></td>
+        <td>${productName}</td>
+        <td>${productPrice}</td>
+        
+      `;
+    
+      cartTable.appendChild(newCartRow);
+    
+      // Update the total price
+      updateTotalPrice();
+    
+      // Add the product to the cart in local storage
+      const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+      cartItems.push({
+        id: productId,
+        name: productName,
+        price: productPrice,
+        quantity: 1,
+      });
+    
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    });
+    });
+    
+    removeFromCartButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Get the cart row ID
+      const cartRowId = this.getAttribute('data-cart-row-id');
+    
+      // Remove the cart row
+      cartTable.removeChild(document.querySelector(`#${cartRowId}`));
+    
+      // Update the total price
+      updateTotalPrice();
+    
+      // Remove the product from the cart in local storage
+      const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+      const cartItemIndex = cartItems.findIndex(item => item.id === cartRowId);
+    
+      if (cartItemIndex !== -1) {
+        cartItems.splice(cartItemIndex, 1);
+      }
+    
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    });
+    });
+    
+    checkoutButton.addEventListener('click', function() {
+    // TODO: Implement code to process the payment and generate the order confirmation.
+    
+    // Once the checkout process is complete, redirect the user to the checkout confirmation page.
+    window.location.href = '/checkout-confirmation';
+    });
+    
+    function updateTotalPrice() {
+    // Reset the total price
+    totalPrice = 0;
+    
+    // Iterate over the cart rows and add the price of each item to the total price
+    const cartRows = document.querySelectorAll('#cart-table-body tr');
+    cartRows.forEach(row => {
+      const price = parseFloat(row.querySelector('td:nth-child(4)').textContent);
+      totalPrice += price;
+    });
+    
+    // Display the total price
+    const totalPriceDisplay = document.querySelector('#total-price');
+    totalPriceDisplay.textContent = `ksh ${totalPrice.toFixed(0)}`;
+    }
+    
+    // Add a resize event listener to the window
+    window.addEventListener('resize', updateTotalPrice);
+    
+      </script>
+</body>
+</html>
