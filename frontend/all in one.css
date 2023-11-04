@@ -124,7 +124,7 @@ background: linear-gradient(90deg, #c59364 35.24%, rgba(72, 73, 74, 0.00) 60.76%
 }
 /*end of cart*/
   body {
-      background-color: rgb(194, 188, 188);
+      background-color: whitesmoke;
     font-family: Calluna, Arial, sans-serif;
     min-height: 1000px;
   }
@@ -225,17 +225,18 @@ background: linear-gradient(90deg, #c59364 35.24%, rgba(72, 73, 74, 0.00) 60.76%
     color:#f1f2f3;
   }
   .cart-listing {
-    width: 1300px;
+    width: 900px;
     margin: 0 auto;
     border-radius: 20px;
-    margin-bottom: 500px;
-    background: gray;
-    border: 2px solid black;
+    margin-bottom: 300px;
+    background: rgb(114, 113, 111);
+    border: none;
   }
   
   .name-cart{
     text-align: center;
     color: black;
+    background-color: rgb(172, 168, 168);
     font-family: 'Times New Roman', Times, serif;
     font-size: 60px;
     font-style: normal;
@@ -245,27 +246,31 @@ background: linear-gradient(90deg, #c59364 35.24%, rgba(72, 73, 74, 0.00) 60.76%
   
   .cart-table {
     width: 100%;
+    background-color: rgb(172, 168, 168);
+    font-size: 25px;
     border-collapse: collapse;
+    color: black;
   }
   
-  .cart-table th,
+  
   .cart-table td {
     padding: 10px;
     border: 0.1px solid rgb(12, 12, 12);
-    color: #eee;
-    font-family: Calibri;
-    font-size: 30px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
   }
   
   .cart-table th {
-    background-color: #eee;
     border: 1px solid #000;
-    background: #26282B;
-    color: #eee;
+    background: rgb(172, 168, 168);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
     width: 500px;
+    color: black;
   }
   
   .cart-table td img {
@@ -282,8 +287,8 @@ background: linear-gradient(90deg, #c59364 35.24%, rgba(72, 73, 74, 0.00) 60.76%
   }
   
   .cart-total h3 {
-    font-family: Calibri;
-    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -291,29 +296,28 @@ background: linear-gradient(90deg, #c59364 35.24%, rgba(72, 73, 74, 0.00) 60.76%
   
   .cart-total #total-price {
     color: #ffffff;
-    font-family: Calibri;
-    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: normal;
   }
   .checkout{
     margin: 2%;
-    margin-left: 3%;
-    width: 150px;
+    margin-left: 45%;
+    width: 100px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 20px;
     background: #FFF;
-    box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.50);
     justify-content: center;
     color: #000;
     text-align: center;
-    font-family: sans-serif;
-    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-  }
+    }
   .checkout:hover{
       background: #b6b6b6;
   }
