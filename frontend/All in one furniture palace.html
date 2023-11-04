@@ -800,14 +800,14 @@ button.addEventListener('click', function() {
   const productId = this.getAttribute('data-product-id');
   const productName = this.closest('figure').querySelector('figcaption').textContent;
   const productPrice = parseFloat(this.closest('figure').querySelector('.price').textContent);
-  
+  const productImg = this.closest('figure').querySelector('img').src;
 
   // Add the product to the cart
   const newCartRow = document.createElement('tr');
   newCartRow.setAttribute('id', `row-${Math.random()}`);
   newCartRow.innerHTML = `
     <td>${productId}</td>
-    <td><img src="img/${productName}.jpg" alt="${productName}"></td>
+    <td><img src="${productImg}" alt="${productName}"></td>
     <td>${productName}</td>
     <td>${productPrice}</td>
     
