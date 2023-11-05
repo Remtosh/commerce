@@ -5,8 +5,16 @@
   h1
   {
       text-align: center;
-      font-family: 'Times New Roman', Times, serif;
+      font-size: 50px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       background-color: white;
+      color: rgb(80, 46, 46);
+  }
+  h2
+  {
+text-align: center;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 30px;
   }
   header{
     display: block;
@@ -274,8 +282,8 @@ background: linear-gradient(90deg, #c59364 35.24%, rgba(72, 73, 74, 0.00) 60.76%
   }
   
   .cart-table td img {
-    width: 250px;
-    height: 250px;
+    width: 40px;
+    height:40px;
     object-fit: contain;
   }
   
@@ -321,6 +329,49 @@ background: linear-gradient(90deg, #c59364 35.24%, rgba(72, 73, 74, 0.00) 60.76%
   .checkout:hover{
       background: #b6b6b6;
   }
+  
+footer {
+  background-color: #333; 
+  color: #f0d4d4; 
+  padding: 20px 0; /
+  text-align: center; 
+  font-size: 13px;
+  border-radius: 20px;
+}
+
+
+.footer-content {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.footer-content p {
+  margin: 0; 
+}
+
+.footer-content ul {
+  list-style: none; 
+  padding: 0;
+  display: flex;
+}
+
+.footer-content ul li {
+  margin: 0 10px; 
+}
+
+.footer-content ul li a {
+  color: #fff;
+  text-decoration: none; 
+}
+
+.footer-content ul li a:hover {
+  text-decoration: underline; 
+}
+
     
   @media screen and (max-width: 960px) { 
     #columns figure { width: 24%; }
